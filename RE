@@ -1,0 +1,46 @@
+hostname =  duckduckgo.com, api*.smoot.apple.com, api*.smoot.apple.cn
+
+#[rewrite_local]
+# 🔍 Siri Bag (iOS/macOS)
+^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/bag(\?.*)?$ url script-request-header https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js
+^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/bag(\?.*)?$ url script-response-body https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.response.js
+# 🔍 Siri Spotlight & Look Up Search (iOS/macOS)
+^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/search(\?.*)?$ url script-request-header https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js
+^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/search(\?.*)?$ url script-response-body https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.response.js
+# 🔍 Siri warm (unknown)
+^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/warm(\?.*)?$ url script-request-header https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js
+# 🔍 Siri render (unknown)
+^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/render(\?.*)?$ url script-request-header https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js
+# 🔍 Siri Flight Search (iOS/macOS)
+^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/flight(\?.*)?$ url script-request-header https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js
+
+^https?://(www.)?(g|google).cn url 302 https://www.google.com
+^https:\/\/duckduckgo.com\/\?q=1s\+([^&]+).+ url 302 https://123-series.com/country/$1
+^https:\/\/duckduckgo.com\/\?q=amz\+([^&]+).+ url 302 https://www.amazon.com/s?k=$1
+^https:\/\/duckduckgo.com\/\?q=aw\+([^&]+).+ url 302 https://awwrated.com/zh-tw/$1
+^https:\/\/duckduckgo.com\/\?q=bl\+([^&]+).+ url 302 https://m.bilibili.com/search?keyword=$1
+^https:\/\/duckduckgo.com\/\?q=db\+([^&]+).+ url 302 https://m.douban.com/search/?query=$1
+^https:\/\/duckduckgo.com\/\?q=dd\+([^&]+).+ url 302 https://ddys.pro/?s=$1
+^https:\/\/duckduckgo.com\/\?q=dy\+([^&]+).+ url 302 https://www.douyin.com/search/$1
+^https:\/\/duckduckgo.com\/\?q=gh\+([^&]+).+ url 302 https://github.com/$1
+^https:\/\/duckduckgo.com\/\?q=ghs\+([^&]+).+ url 302 https://github.com/search?q=$1
+^https:\/\/duckduckgo.com\/\?q=gt\+([^&]+).+ url 302 https://gist.github.com/search?q=user%3A$1
+^https:\/\/duckduckgo.com\/\?q=ig\+([^&]+).+ url 302 https://imginn.com/$1
+^https:\/\/duckduckgo.com\/\?q=ip8\+([^&]+).+ url 302 https://ip8.com/ipdetails/$1
+^https:\/\/duckduckgo.com\/\?q=ip\+([^&]+).+ url 302 https://whois.ipip.net/cidr/$1/32
+^https:\/\/duckduckgo.com\/\?q=iq\+([^&]+).+ url 302 https://m.iqiyi.com/search.html?source=input&key=$1
+^https:\/\/duckduckgo.com\/\?q=mf\+([^&]+).+ url 302 https://myflixer.is/country/$1
+^https:\/\/duckduckgo.com\/\?q=mh\+([^&]+).+ url 302 https://www.colamanhua.com/search?type=1&searchString=$1
+^https:\/\/duckduckgo.com\/\?q=od\+([^&]+).+ url 302 https://odysee.com/$/search?q=$1
+^https:\/\/duckduckgo.com\/\?q=p\+([^&]+).+ url 302 https://ping.pe/$1
+^https:\/\/duckduckgo.com\/\?q=pd\+([^&]+).+ url 302 https://dlpanda.com/en?url=$1
+^https:\/\/duckduckgo.com\/\?q=tg\+([^&]+).+ url 302 https://t.me/$1
+^https:\/\/duckduckgo.com\/\?q=tw\+([^&]+).+ url 302 https://www.sotwe.com/search/$1
+^https:\/\/duckduckgo.com\/\?q=txt\+([^&]+).+ url 302 https://zlibrary-global.se/s/$1?
+^https:\/\/duckduckgo.com\/\?q=vq\+([^&]+).+ url 302 https://m.v.qq.com/hippysearch/#/result?query=$1
+^https:\/\/duckduckgo.com\/\?q=wb\+([^&]+).+ url 302 https://s.weibo.com/weibo/$1
+^https:\/\/duckduckgo.com\/\?q=wk\+([^&]+).+ url 302 https://zh.m.wikipedia.org/wiki/$1
+^https:\/\/duckduckgo.com\/\?q=yt\+([^&]+).+ url 302 https://m.youtube.com/results?sp=mAEA&search_query=$1
+^https:\/\/duckduckgo.com\/\?q=ytc\+([^&]+).+ url 302 https://socialblade.com/search/search?query=$1
+^https:\/\/duckduckgo.com\/\?q=bd\+([^&]+).+ url 302 https://www.baidu.com/s?wd=$1
+^https:\/\/duckduckgo.com\/\?q=([^&]+).+ url 302 https://www.google.com/search?q=$1
